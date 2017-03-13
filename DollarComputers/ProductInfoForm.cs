@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DollarComputers
 {
-    public partial class ProductForm : Form
+    public partial class ProductInfoForm : Form
     {
-        public ProductForm()
+        public ProductInfoForm()
         {
             InitializeComponent();
         }
