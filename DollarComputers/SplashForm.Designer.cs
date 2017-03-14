@@ -43,9 +43,9 @@
             this.DollarComputersLabel.Location = new System.Drawing.Point(325, 42);
             this.DollarComputersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.DollarComputersLabel.Name = "DollarComputersLabel";
-            this.DollarComputersLabel.Size = new System.Drawing.Size(224, 33);
+            this.DollarComputersLabel.Size = new System.Drawing.Size(217, 33);
             this.DollarComputersLabel.TabIndex = 0;
-            this.DollarComputersLabel.Text = "ollar Computers";
+            this.DollarComputersLabel.Text = "ollarComputers";
             this.DollarComputersLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // LogoPictureBox

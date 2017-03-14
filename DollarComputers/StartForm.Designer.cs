@@ -91,12 +91,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 416);
+            this.ControlBox = false;
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.SavedOrderButton);
             this.Controls.Add(this.StartNewOrderButton);
             this.Controls.Add(this.CoinImagePictureBox);
             this.Controls.Add(this.OrderLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StartForm";
+            this.ShowIcon = false;
             this.Text = "Welcome to the Dollar Computer!";
             ((System.ComponentModel.ISupportInitialize)(this.CoinImagePictureBox)).EndInit();
             this.ResumeLayout(false);
