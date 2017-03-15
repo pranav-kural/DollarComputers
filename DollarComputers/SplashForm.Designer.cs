@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DollarComputersLabel = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DollarComputerPictureBox = new System.Windows.Forms.PictureBox();
+            this.SplashFormTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DollarComputerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DollarComputersLabel
@@ -46,7 +48,6 @@
             this.DollarComputersLabel.Size = new System.Drawing.Size(217, 33);
             this.DollarComputersLabel.TabIndex = 0;
             this.DollarComputersLabel.Text = "ollarComputers";
-            this.DollarComputersLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // LogoPictureBox
             // 
@@ -58,15 +59,21 @@
             this.LogoPictureBox.TabIndex = 1;
             this.LogoPictureBox.TabStop = false;
             // 
-            // pictureBox1
+            // DollarComputerPictureBox
             // 
-            this.pictureBox1.BackgroundImage = global::DollarComputers.Properties.Resources.intro_hero;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(762, 328);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.DollarComputerPictureBox.BackgroundImage = global::DollarComputers.Properties.Resources.intro_hero;
+            this.DollarComputerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DollarComputerPictureBox.Location = new System.Drawing.Point(2, 78);
+            this.DollarComputerPictureBox.Name = "DollarComputerPictureBox";
+            this.DollarComputerPictureBox.Size = new System.Drawing.Size(762, 328);
+            this.DollarComputerPictureBox.TabIndex = 2;
+            this.DollarComputerPictureBox.TabStop = false;
+            // 
+            // SplashFormTimer
+            // 
+            this.SplashFormTimer.Enabled = true;
+            this.SplashFormTimer.Interval = 3000;
+            this.SplashFormTimer.Tick += new System.EventHandler(this.SplashFormTimer_Tick);
             // 
             // SplashForm
             // 
@@ -76,7 +83,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.DollarComputersLabel);
             this.Controls.Add(this.LogoPictureBox);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.DollarComputerPictureBox);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -84,7 +91,7 @@
             this.ShowIcon = false;
             this.Text = "Dollar Computers";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DollarComputerPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +101,8 @@
 
         private System.Windows.Forms.Label DollarComputersLabel;
         private System.Windows.Forms.PictureBox LogoPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox DollarComputerPictureBox;
+        private System.Windows.Forms.Timer SplashFormTimer;
     }
 }
 

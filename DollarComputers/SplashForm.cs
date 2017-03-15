@@ -17,9 +17,19 @@ namespace DollarComputers
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
+            // create a new instance of StartForm
+            StartForm startForm = new StartForm();
 
+            // disable the timer
+            SplashFormTimer.Enabled = false;
+
+            // Hide the splash form
+            this.Hide();
+
+            // Show the start form
+            startForm.Show();
         }
     }
 }
