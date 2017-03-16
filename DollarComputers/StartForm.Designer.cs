@@ -53,8 +53,10 @@
             this.StartNewOrderButton.Name = "StartNewOrderButton";
             this.StartNewOrderButton.Size = new System.Drawing.Size(162, 39);
             this.StartNewOrderButton.TabIndex = 2;
+            this.StartNewOrderButton.Tag = "new order";
             this.StartNewOrderButton.Text = "Start a New Order";
             this.StartNewOrderButton.UseVisualStyleBackColor = true;
+            this.StartNewOrderButton.Click += new System.EventHandler(this._StartFormButtonClickHandler);
             // 
             // SavedOrderButton
             // 
@@ -63,8 +65,10 @@
             this.SavedOrderButton.Name = "SavedOrderButton";
             this.SavedOrderButton.Size = new System.Drawing.Size(162, 39);
             this.SavedOrderButton.TabIndex = 3;
+            this.SavedOrderButton.Tag = "saved order";
             this.SavedOrderButton.Text = "Open a Saved Order";
             this.SavedOrderButton.UseVisualStyleBackColor = true;
+            this.SavedOrderButton.Click += new System.EventHandler(this._StartFormButtonClickHandler);
             // 
             // ExitButton
             // 
@@ -73,8 +77,10 @@
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(162, 39);
             this.ExitButton.TabIndex = 4;
+            this.ExitButton.Tag = "exit";
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this._StartFormButtonClickHandler);
             // 
             // CoinImagePictureBox
             // 

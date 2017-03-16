@@ -16,5 +16,23 @@ namespace DollarComputers
         {
             InitializeComponent();
         }
+
+        private void _StartFormButtonClickHandler(Object sender, EventArgs e)
+        {
+            Button buttonClicked = sender as Button;
+
+            switch (buttonClicked.Tag.ToString())
+            {
+                case "new order":
+                    
+                    break;
+                case "saved order":
+
+                    break;
+                case "exit":
+
+                    break;
+            }
+        }
     }
 }
