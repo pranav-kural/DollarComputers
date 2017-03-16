@@ -24,7 +24,15 @@ namespace DollarComputers
             switch (buttonClicked.Tag.ToString())
             {
                 case "new order":
-                    
+                    // create an instance of the SelectForm
+                    SelectForm selectForm = new SelectForm();
+
+                    // hide the StartForm
+                    this.Hide();
+
+                    // show the SelectForm
+                    selectForm.Show();
+
                     break;
                 case "saved order":
 
