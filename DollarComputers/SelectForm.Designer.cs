@@ -28,75 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HardwareListLabel = new System.Windows.Forms.Label();
+            this.YourSelectionLabel = new System.Windows.Forms.Label();
+            this.SelectionTextBox = new System.Windows.Forms.TextBox();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.ModelsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // HardwareListLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DollarComputer Hardware List";
+            this.HardwareListLabel.AutoSize = true;
+            this.HardwareListLabel.BackColor = System.Drawing.Color.White;
+            this.HardwareListLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HardwareListLabel.Font = new System.Drawing.Font("Century Gothic", 10.75F, System.Drawing.FontStyle.Bold);
+            this.HardwareListLabel.Location = new System.Drawing.Point(12, 13);
+            this.HardwareListLabel.Name = "HardwareListLabel";
+            this.HardwareListLabel.Size = new System.Drawing.Size(229, 20);
+            this.HardwareListLabel.TabIndex = 0;
+            this.HardwareListLabel.Text = "DollarComputer Hardware List";
             // 
-            // listBox1
+            // YourSelectionLabel
             // 
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Items.AddRange(new object[] {
-            "List of saved computers"});
-            this.listBox1.Location = new System.Drawing.Point(12, 37);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(660, 293);
-            this.listBox1.TabIndex = 1;
+            this.YourSelectionLabel.AutoSize = true;
+            this.YourSelectionLabel.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
+            this.YourSelectionLabel.Location = new System.Drawing.Point(12, 348);
+            this.YourSelectionLabel.Name = "YourSelectionLabel";
+            this.YourSelectionLabel.Size = new System.Drawing.Size(104, 17);
+            this.YourSelectionLabel.TabIndex = 2;
+            this.YourSelectionLabel.Text = "Your Selection";
             // 
-            // label2
+            // SelectionTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 348);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Your Selection";
+            this.SelectionTextBox.Font = new System.Drawing.Font("Century Gothic", 10.75F);
+            this.SelectionTextBox.Location = new System.Drawing.Point(122, 347);
+            this.SelectionTextBox.Name = "SelectionTextBox";
+            this.SelectionTextBox.Size = new System.Drawing.Size(376, 25);
+            this.SelectionTextBox.TabIndex = 3;
             // 
-            // textBox1
+            // NextButton
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.75F);
-            this.textBox1.Location = new System.Drawing.Point(141, 344);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 25);
-            this.textBox1.TabIndex = 3;
+            this.NextButton.Font = new System.Drawing.Font("Century Gothic", 8.75F, System.Drawing.FontStyle.Bold);
+            this.NextButton.Location = new System.Drawing.Point(595, 346);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(78, 29);
+            this.NextButton.TabIndex = 13;
+            this.NextButton.Tag = "next";
+            this.NextButton.Text = "Next";
+            this.NextButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // CancelButton
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(595, 343);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 29);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Next";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 8.75F, System.Drawing.FontStyle.Bold);
+            this.CancelButton.Location = new System.Drawing.Point(511, 346);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(78, 29);
+            this.CancelButton.TabIndex = 12;
+            this.CancelButton.Tag = "cancel";
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ModelsDataGridView
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(511, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 29);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ModelsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ModelsDataGridView.Location = new System.Drawing.Point(12, 37);
+            this.ModelsDataGridView.Name = "ModelsDataGridView";
+            this.ModelsDataGridView.ReadOnly = true;
+            this.ModelsDataGridView.Size = new System.Drawing.Size(661, 300);
+            this.ModelsDataGridView.TabIndex = 14;
             // 
             // SelectForm
             // 
@@ -105,17 +105,18 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(694, 384);
             this.ControlBox = false;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ModelsDataGridView);
+            this.Controls.Add(this.NextButton);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.SelectionTextBox);
+            this.Controls.Add(this.YourSelectionLabel);
+            this.Controls.Add(this.HardwareListLabel);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectForm";
             this.ShowIcon = false;
             this.Text = "Select Your Computer";
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,11 +124,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label HardwareListLabel;
+        private System.Windows.Forms.Label YourSelectionLabel;
+        private System.Windows.Forms.TextBox SelectionTextBox;
+        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.DataGridView ModelsDataGridView;
     }
 }

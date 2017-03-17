@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StartForm";
-            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to the Dollar Computer!";
             ((System.ComponentModel.ISupportInitialize)(this.CoinImagePictureBox)).EndInit();
             this.ResumeLayout(false);
