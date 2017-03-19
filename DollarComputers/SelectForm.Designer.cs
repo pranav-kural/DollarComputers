@@ -33,8 +33,8 @@
             this.SelectionTextBox = new System.Windows.Forms.TextBox();
             this.NextButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.ModelsDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.ModelsDataGridView)).BeginInit();
+            this.ProductsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // HardwareListLabel
@@ -69,6 +69,7 @@
             // 
             // NextButton
             // 
+            this.NextButton.Enabled = false;
             this.NextButton.Font = new System.Drawing.Font("Century Gothic", 8.75F, System.Drawing.FontStyle.Bold);
             this.NextButton.Location = new System.Drawing.Point(595, 346);
             this.NextButton.Name = "NextButton";
@@ -77,6 +78,7 @@
             this.NextButton.Tag = "next";
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.SelectFormButtonClickEventHandler);
             // 
             // CancelButton
             // 
@@ -88,15 +90,17 @@
             this.CancelButton.Tag = "cancel";
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.SelectFormButtonClickEventHandler);
             // 
-            // ModelsDataGridView
+            // ProductsDataGridView
             // 
-            this.ModelsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ModelsDataGridView.Location = new System.Drawing.Point(12, 37);
-            this.ModelsDataGridView.Name = "ModelsDataGridView";
-            this.ModelsDataGridView.ReadOnly = true;
-            this.ModelsDataGridView.Size = new System.Drawing.Size(661, 300);
-            this.ModelsDataGridView.TabIndex = 14;
+            this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsDataGridView.Location = new System.Drawing.Point(12, 37);
+            this.ProductsDataGridView.Name = "ProductsDataGridView";
+            this.ProductsDataGridView.ReadOnly = true;
+            this.ProductsDataGridView.Size = new System.Drawing.Size(661, 300);
+            this.ProductsDataGridView.TabIndex = 14;
+            this.ProductsDataGridView.SelectionChanged += new System.EventHandler(this.ProductsDataGridView_SelectionChanged);
             // 
             // SelectForm
             // 
@@ -105,7 +109,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(694, 384);
             this.ControlBox = false;
-            this.Controls.Add(this.ModelsDataGridView);
+            this.Controls.Add(this.ProductsDataGridView);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SelectionTextBox);
@@ -115,8 +119,10 @@
             this.MinimizeBox = false;
             this.Name = "SelectForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Your Computer";
-            ((System.ComponentModel.ISupportInitialize)(this.ModelsDataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.SelectForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +135,6 @@
         private System.Windows.Forms.TextBox SelectionTextBox;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.DataGridView ModelsDataGridView;
+        private System.Windows.Forms.DataGridView ProductsDataGridView;
     }
 }

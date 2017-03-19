@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DollarComputers.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace DollarComputers
 {
     public partial class SelectForm : Form
     {
+        // connecting to the Products Models
+        ProductsModel DollarComputersDB = new ProductsModel();
+
         public SelectForm()
         {
             InitializeComponent();
@@ -36,7 +40,33 @@ namespace DollarComputers
                     }
 
                     break;
-                case "next": break;
+                case "next":
+
+                    break;
+            }
+        }
+
+        private void SelectForm_Load(object sender, EventArgs e)
+        {
+            // select all the products in the Products table of the DollarComputers DB
+            var ProductList = (from product in DollarComputersDB.products
+                               select product).ToList();
+
+            // bind the ProductList to the ProductsDataGridView
+            ProductsDataGridView.DataSource = ProductList;
+        }
+
+        private void ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ProductsDataGridView.Rows[ProductsDataGridView.CurrentRow.Index].Selected = true;
+                NextButton.Enabled = true; // enable the next button on selection being made
+            }
+            catch (Exception ex)
+            {
+                // empty catch block to catch the NullPointerException thrown when the form is
+                // first loaded without any prior selection
             }
         }
     }
