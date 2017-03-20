@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,26 @@ namespace DollarComputers
 
                     break;
                 case "next":
+                    // Collection to store the selected product's properties
+                    // stored with property name and value both. Example: 'productId' => '7'
+                    Dictionary<string, string> selectedProduct = new Dictionary<string, string>();
+
+                    // Get the selected cells
+                    DataGridViewSelectedCellCollection selectedRow = ProductsDataGridView.SelectedCells;
+                    // Add the data from selected cells to the selectedProducts Collection
+                    for (int i = 0; i <= selectedRow.Count - 1; i++)
+                    {
+                        selectedProduct.Add(ProductsDataGridView.Columns[i].HeaderText, selectedRow[i].Value.ToString());
+                    }
+
+                    // create an instance of the ProductInfoForm
+                    ProductInfoForm productInfoForm = new ProductInfoForm(selectedProduct);
+
+                    // Hide the SelectForm
+                    this.Hide();
+
+                    // show the ProductInfoForm
+                    productInfoForm.Show();
 
                     break;
             }

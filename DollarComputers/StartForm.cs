@@ -40,7 +40,7 @@ namespace DollarComputers
                     break;
                 case "saved order":
                     // create an instance of the ProductInfoForm
-                    ProductInfoForm productInfoForm = new ProductInfoForm();
+                    ProductInfoForm productInfoForm = new ProductInfoForm(null);
 
                     // hide the StartForm
                     this.Hide();
