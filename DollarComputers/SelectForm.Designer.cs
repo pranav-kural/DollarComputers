@@ -66,6 +66,7 @@
             this.SelectionTextBox.Name = "SelectionTextBox";
             this.SelectionTextBox.Size = new System.Drawing.Size(376, 25);
             this.SelectionTextBox.TabIndex = 3;
+            this.SelectionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NextButton
             // 

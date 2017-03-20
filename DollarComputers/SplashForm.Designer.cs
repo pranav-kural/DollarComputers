@@ -89,6 +89,7 @@
             this.MinimizeBox = false;
             this.Name = "SplashForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dollar Computers";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DollarComputerPictureBox)).EndInit();

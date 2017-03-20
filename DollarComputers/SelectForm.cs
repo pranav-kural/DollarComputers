@@ -17,6 +17,7 @@ namespace DollarComputers
         // connecting to the Products Models
         ProductsModel DollarComputersDB = new ProductsModel();
 
+        // SelectForm constructor
         public SelectForm()
         {
             InitializeComponent();
@@ -67,6 +68,12 @@ namespace DollarComputers
             }
         }
 
+        /// <summary>
+        /// Load Form Even Handler - Fires when the form is loaded
+        /// Connects, binds and fill in the ProductsDataGridView with the data from DollarComputerDB's products table
+        /// </summary>
+        /// <param name="sender">Event object received</param>
+        /// <param name="e">Event arguments</param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
             // select all the products in the Products table of the DollarComputers DB
@@ -77,11 +84,18 @@ namespace DollarComputers
             ProductsDataGridView.DataSource = ProductList;
         }
 
+        // DataGridView SelectionChanged event handler to update selection info
         private void ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
+                // highlight and select the whole row of the cell clicked in
                 ProductsDataGridView.Rows[ProductsDataGridView.CurrentRow.Index].Selected = true;
+
+                // display selected product details in the Your Selection Text Box
+                // SelectedCells index represents: 1 => Cost, 2 => MFG, 3=> Model
+                SelectionTextBox.Text = ProductsDataGridView.SelectedCells[2].Value.ToString() + " " + ProductsDataGridView.SelectedCells[3].Value.ToString() + " Priced at: $" + ProductsDataGridView.SelectedCells[1].Value.ToString();
+
                 NextButton.Enabled = true; // enable the next button on selection being made
             }
             catch (Exception ex)
@@ -89,6 +103,7 @@ namespace DollarComputers
                 // empty catch block to catch the NullPointerException thrown when the form is
                 // first loaded without any prior selection
             }
+           
         }
     }
 }
