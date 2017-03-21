@@ -54,6 +54,11 @@ namespace DollarComputers
                     {
                         selectedProduct.Add(ProductsDataGridView.Columns[i].HeaderText, selectedRow[i].Value.ToString());
                     }
+                    
+                    foreach (KeyValuePair<string, string> kvp in selectedProduct)
+                    {
+                        Debug.WriteLine(kvp.Key + " => " + kvp.Value);
+                    }
 
                     // create an instance of the ProductInfoForm
                     ProductInfoForm productInfoForm = new ProductInfoForm(selectedProduct);
