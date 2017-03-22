@@ -16,6 +16,7 @@ namespace DollarComputers
     {
 
         // stores the product data
+        private Dictionary<string, string> _ProductData;
 
         /// <summary>
         /// ProductInfoForm constructor
@@ -29,36 +30,38 @@ namespace DollarComputers
             if (selectedProduct != null)
             {
                 // pass the product info received to the fill method
-                _fillProductInfo(selectedProduct);
+                this._ProductData = selectedProduct;
             }
             else
             {
                 // if no selected product was transferred, i.e., product to be selected from saved orders
-                Debug.WriteLine("Product not recieved");
+                this.openToolStripMenuItem.PerformClick(); // initamtest the click on Open button in the menu and runs the required logic
             }
-            
+
+            // call the fill method to fill the form data
+            _fillProductInfo();
         }
 
         // fill the form text boxes
-        private void _fillProductInfo(Dictionary<string, string> productInfo)
+        private void _fillProductInfo()
         {
             // fill the product id, condition, cost (independent items outside any GroupBox)
             foreach (TextBox textBox in this.Controls.OfType<TextBox>())
             {
-                textBox.Text = productInfo[textBox.Tag.ToString()];
+                textBox.Text = this._ProductData[textBox.Tag.ToString()];
 
             }
 
             // fill the ProductInfoGroupBox
             foreach (TextBox textBox in this.ProductInfoGroupBox.Controls.OfType<TextBox>())
             {
-                textBox.Text = productInfo[textBox.Tag.ToString()];
+                textBox.Text = this._ProductData[textBox.Tag.ToString()];
             }
 
             // fill the TechSpecsGroupBox
             foreach (TextBox textBox in this.TechSpecsGroupBox.Controls.OfType<TextBox>())
             {
-                textBox.Text = productInfo[textBox.Tag.ToString()];
+                textBox.Text = this._ProductData[textBox.Tag.ToString()];
             }
         }
 
@@ -81,18 +84,16 @@ namespace DollarComputers
             {
                 // Open the read stream
                 StreamReader fileStreamReader = new StreamReader(this.OpenProductFileDialog.FileName);
-
-                // dictionary to store the product data being read
-                Dictionary<string, string> productData = new Dictionary<string, string>();
-
+                
                 // while there is data in file to be read
                 while (fileStreamReader.Peek() != -1) 
                 {
-                    productData.Add(fileStreamReader.ReadLine().Split(' ')[0], fileStreamReader.ReadLine().Split(' ')[1]);
+                    // read each line and insert the data to the _ProductData collection
+                    this._ProductData.Add(fileStreamReader.ReadLine().Split(' ')[0], fileStreamReader.ReadLine().Split(' ')[1]);
                 }
 
-                // transfer the data to be filled on the ProductInfoForm
-                this._fillProductInfo(productData);
+                // fill the data on the ProductInfoForm
+                this._fillProductInfo();
             }
             catch (Exception ex)
             {
@@ -115,12 +116,18 @@ namespace DollarComputers
                     // Open the file stream for writing
                     StreamWriter fileStreamWriter = new StreamWriter(this.SaveProductFileDialog.FileName);
 
+                    // loop through each element inside the _ProductData collection to write it to the file
+                    foreach (KeyValuePair<string, string> productDetail in this._ProductData)
+                    {
+                        // write the product detail into file. Example: "productID 7"
+                        fileStreamWriter.WriteLine(productDetail.Key + " " + productDetail.Value);
+                    }
 
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Debug.WriteLine(ex);
                 }
             }
         }
