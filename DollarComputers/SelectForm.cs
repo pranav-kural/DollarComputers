@@ -87,6 +87,7 @@ namespace DollarComputers
 
             // bind the ProductList to the ProductsDataGridView
             ProductsDataGridView.DataSource = ProductList;
+            
         }
 
         // DataGridView SelectionChanged event handler to update selection info
@@ -94,9 +95,6 @@ namespace DollarComputers
         {
             try
             {
-                // highlight and select the whole row of the cell clicked in
-                ProductsDataGridView.Rows[ProductsDataGridView.CurrentRow.Index].Selected = true;
-
                 // display selected product details in the Your Selection Text Box
                 // SelectedCells index represents: 1 => Cost, 2 => MFG, 3=> Model
                 SelectionTextBox.Text = ProductsDataGridView.SelectedCells[2].Value.ToString() + " " + ProductsDataGridView.SelectedCells[3].Value.ToString() + " Priced at: $" + ProductsDataGridView.SelectedCells[1].Value.ToString();

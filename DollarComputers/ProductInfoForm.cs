@@ -15,6 +15,8 @@ namespace DollarComputers
     public partial class ProductInfoForm : Form
     {
 
+        // stores the product data
+
         /// <summary>
         /// ProductInfoForm constructor
         /// </summary>
@@ -61,12 +63,24 @@ namespace DollarComputers
         }
 
         // read the file
-        private void _readFile()
+        private void _readProductFile(Object sender, EventArgs e)
         {
+            // Open the OpenProductFileDialog Box
+            this.OpenProductFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            DialogResult result = this.OpenProductFileDialog.ShowDialog();
+
+            // if user doesn't select a file
+            if (result == DialogResult.Cancel)
+            {
+                // no file will be read since user cancelled the request to read a file
+                return;
+            }
+
+            // if user has selected a file then try to open and read it
             try
             {
                 // Open the read stream
-                StreamReader fileStreamReader = new StreamReader(@"");
+                StreamReader fileStreamReader = new StreamReader(this.OpenProductFileDialog.FileName);
 
                 // dictionary to store the product data being read
                 Dictionary<string, string> productData = new Dictionary<string, string>();
@@ -80,9 +94,34 @@ namespace DollarComputers
                 // transfer the data to be filled on the ProductInfoForm
                 this._fillProductInfo(productData);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine(ex);
+            }
+        }
+
+        // save to the file
+        private void _saveProductFile(Object sender, EventArgs e)
+        {
+            // open the save file dialog box
+            this.SaveProductFileDialog.InitialDirectory = Directory.GetCurrentDirectory();  // set the intial directory
+            DialogResult result = SaveProductFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    // Open the file stream for writing
+                    StreamWriter fileStreamWriter = new StreamWriter(this.SaveProductFileDialog.FileName);
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
             }
         }
      }

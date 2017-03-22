@@ -97,8 +97,10 @@
             // 
             this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsDataGridView.Location = new System.Drawing.Point(12, 37);
+            this.ProductsDataGridView.MultiSelect = false;
             this.ProductsDataGridView.Name = "ProductsDataGridView";
             this.ProductsDataGridView.ReadOnly = true;
+            this.ProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductsDataGridView.Size = new System.Drawing.Size(661, 300);
             this.ProductsDataGridView.TabIndex = 14;
             this.ProductsDataGridView.SelectionChanged += new System.EventHandler(this.ProductsDataGridView_SelectionChanged);

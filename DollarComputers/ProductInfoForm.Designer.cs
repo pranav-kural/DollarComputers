@@ -88,6 +88,8 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenProductFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.SaveProductFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ProductInfoGroupBox.SuspendLayout();
             this.TechSpecsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -681,6 +683,18 @@
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
+            // OpenProductFileDialog
+            // 
+            this.OpenProductFileDialog.DefaultExt = "txt";
+            this.OpenProductFileDialog.FileName = "Product.txt";
+            this.OpenProductFileDialog.Filter = "Text files|*.txt|All files|*.*";
+            // 
+            // SaveProductFileDialog
+            // 
+            this.SaveProductFileDialog.DefaultExt = "txt";
+            this.SaveProductFileDialog.FileName = "Product";
+            this.SaveProductFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            // 
             // ProductInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,5 +792,7 @@
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog OpenProductFileDialog;
+        private System.Windows.Forms.SaveFileDialog SaveProductFileDialog;
     }
 }
