@@ -63,6 +63,9 @@ namespace DollarComputers
                     // create an instance of the ProductInfoForm
                     ProductInfoForm productInfoForm = new ProductInfoForm(selectedProduct);
 
+                    // set the SelectForm reference for the ProductInfoForm
+                    productInfoForm.selectForm = this;
+
                     // Hide the SelectForm
                     this.Hide();
 

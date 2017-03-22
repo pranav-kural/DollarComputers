@@ -18,6 +18,9 @@ namespace DollarComputers
         // stores the product data
         private Dictionary<string, string> _ProductData;
 
+        // SelectForm reference
+        public SelectForm selectForm;
+
         /// <summary>
         /// ProductInfoForm constructor
         /// </summary>
@@ -25,7 +28,7 @@ namespace DollarComputers
         public ProductInfoForm(Dictionary<string, string> selectedProduct)
         {
             InitializeComponent();
-
+            
             // if selectedProduct has been receievd
             if (selectedProduct != null)
             {
@@ -40,6 +43,58 @@ namespace DollarComputers
 
             // call the fill method to fill the form data
             _fillProductInfo();
+        }
+
+        // Click Event handler for buttons
+        private void _ProductInfoFormButtonClickEventHandler(Object sender, EventArgs e)
+        {
+            // casting the sender object into Button
+            Button buttonClicked = sender as Button;
+
+            switch (buttonClicked.Tag.ToString())
+            {
+                case "cancel":
+                    // exit the application
+
+                    // confirm the closure
+                    DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Exit();
+                    }
+
+                    break;
+                case "next":
+
+
+                    break;
+            }
+        }
+
+        // Shared click event handler for Select Another product
+        private void _SelectAnotherProduct(Object sender, EventArgs e)
+        {
+            // if the SelectForm's reference has been defined, i.e., the ProductInfoForm was generated from the SelectForm
+            if (selectForm != null)
+            {
+                // show the previously hidden selectForm
+                selectForm.Show();
+
+                // Close this ProductInfoForm, since a new ProductInfoForm will be generated through the SelectForm
+                this.Close();
+            }
+            else
+            {
+                // else is selectForm == null; therefore the ProductInfoForm was created directly from the StartForm
+                // instantiate a new instance of the SelectForm
+                selectForm = new SelectForm();
+
+                // show the new select form
+                selectForm.Show();
+
+                // Close this ProductInfoForm, since a new ProductInfoForm will be generated through the SelectForm
+                this.Close();
+            }
         }
 
         // fill the form text boxes
@@ -97,8 +152,9 @@ namespace DollarComputers
             }
             catch (Exception ex)
             {
+                // Give an appropriate error message
                 MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Debug.WriteLine(ex);
+                Debug.WriteLine(ex); // write the essential error information to the console
             }
         }
 
@@ -126,10 +182,18 @@ namespace DollarComputers
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Debug.WriteLine(ex);
+                    // Give an error message
+                    MessageBox.Show("Error saving the file. Please try again!", "Error Saving File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Debug.WriteLine(ex); // print required error information to the console
                 }
             }
         }
-     }
+
+        // Exit menu option click event handler
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // uses the same logic as cancel button to exit the application
+            this.CancelButton.PerformClick();
+        }
+    }
 }

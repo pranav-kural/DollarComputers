@@ -479,6 +479,7 @@
             this.AnotherProductButton.TabIndex = 9;
             this.AnotherProductButton.Text = "Select Another Product";
             this.AnotherProductButton.UseVisualStyleBackColor = true;
+            this.AnotherProductButton.Click += new System.EventHandler(this._SelectAnotherProduct);
             // 
             // button1
             // 
@@ -487,8 +488,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 39);
             this.button1.TabIndex = 10;
+            this.button1.Tag = "cancel";
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this._ProductInfoFormButtonClickEventHandler);
             // 
             // button2
             // 
@@ -497,8 +500,10 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 39);
             this.button2.TabIndex = 11;
+            this.button2.Tag = "next";
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this._ProductInfoFormButtonClickEventHandler);
             // 
             // ProductInfoMenuStrip
             // 
@@ -558,6 +563,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -584,6 +590,7 @@
             this.AnotherProductToolStripMenuItem.Name = "AnotherProductToolStripMenuItem";
             this.AnotherProductToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.AnotherProductToolStripMenuItem.Text = "Se&lect Another Product";
+            this.AnotherProductToolStripMenuItem.Click += new System.EventHandler(this._SelectAnotherProduct);
             // 
             // ProductInfoForm
             // 
