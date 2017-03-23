@@ -40,15 +40,9 @@ namespace DollarComputers
             this.SalesTaxTextBox.Text = "$" + (Double.Parse(productDetails["cost"]) * 0.13).ToString();
             this.TotalPriceTextBox.Text = "$" + (Double.Parse(productDetails["cost"]) * 1.13).ToString();
         }
+        
 
-        // fill the form text boxes
-        private void _fillProductInfo()
-        {
-            
-        }
-
-
-        // Click Event handler for buttons and menu items
+        // Shared click Event handler for buttons and menu items
         private void _OrderFormButtonClickEventHandler(Object sender, EventArgs e)
         {
             
