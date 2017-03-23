@@ -68,6 +68,9 @@ namespace DollarComputers
                     // create an instance of the OrderForm
                     OrderForm orderForm = new OrderForm(this._ProductData);
 
+                    // pass the reference of this form
+                    orderForm.productInfoForm = this;
+
                     // hide the ProductInfoForm
                     this.Hide();
 
