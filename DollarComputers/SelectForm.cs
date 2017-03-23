@@ -55,6 +55,7 @@ namespace DollarComputers
                         selectedProduct.Add(ProductsDataGridView.Columns[i].HeaderText, selectedRow[i].Value.ToString());
                     }
                     
+                    //-- for debugging
                     foreach (KeyValuePair<string, string> kvp in selectedProduct)
                     {
                         Debug.WriteLine(kvp.Key + " => " + kvp.Value);

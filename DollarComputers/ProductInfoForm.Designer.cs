@@ -75,9 +75,9 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AnotherProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenProductFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveProductFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.AnotherProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductInfoGroupBox.SuspendLayout();
             this.TechSpecsGroupBox.SuspendLayout();
             this.ProductInfoMenuStrip.SuspendLayout();
@@ -534,14 +534,14 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this._readProductFile);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -549,19 +549,19 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this._saveProductFile);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -573,24 +573,24 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
-            // OpenProductFileDialog
-            // 
-            this.OpenProductFileDialog.DefaultExt = "txt";
-            this.OpenProductFileDialog.FileName = "Product.txt";
-            this.OpenProductFileDialog.Filter = "Text files|*.txt|All files|*.*";
-            // 
-            // SaveProductFileDialog
-            // 
-            this.SaveProductFileDialog.DefaultExt = "txt";
-            this.SaveProductFileDialog.FileName = "Product";
-            this.SaveProductFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            // 
             // AnotherProductToolStripMenuItem
             // 
             this.AnotherProductToolStripMenuItem.Name = "AnotherProductToolStripMenuItem";
             this.AnotherProductToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.AnotherProductToolStripMenuItem.Text = "Se&lect Another Product";
             this.AnotherProductToolStripMenuItem.Click += new System.EventHandler(this._SelectAnotherProduct);
+            // 
+            // OpenProductFileDialog
+            // 
+            this.OpenProductFileDialog.DefaultExt = "txt";
+            this.OpenProductFileDialog.FileName = "Product.txt";
+            this.OpenProductFileDialog.Filter = "Text files|*.txt";
+            // 
+            // SaveProductFileDialog
+            // 
+            this.SaveProductFileDialog.DefaultExt = "txt";
+            this.SaveProductFileDialog.FileName = "Product";
+            this.SaveProductFileDialog.Filter = "Text files (*.txt)|*.txt";
             // 
             // ProductInfoForm
             // 

@@ -12,7 +12,7 @@ namespace DollarComputers
 {
     public partial class OrderForm : Form
     {
-        public OrderForm()
+        public OrderForm(Dictionary<string, string> productDetails)
         {
             InitializeComponent();
         }

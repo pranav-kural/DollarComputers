@@ -65,7 +65,14 @@ namespace DollarComputers
 
                     break;
                 case "next":
+                    // create an instance of the OrderForm
+                    OrderForm orderForm = new OrderForm(this._ProductData);
 
+                    // hide the ProductInfoForm
+                    this.Hide();
+
+                    // show the OrderForm
+                    orderForm.Show();
 
                     break;
             }
@@ -127,34 +134,46 @@ namespace DollarComputers
             this.OpenProductFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             DialogResult result = this.OpenProductFileDialog.ShowDialog();
 
-            // if user doesn't select a file
-            if (result == DialogResult.Cancel)
-            {
-                // no file will be read since user cancelled the request to read a file
-                return;
-            }
 
-            // if user has selected a file then try to open and read it
-            try
+            if (result == DialogResult.OK)
             {
-                // Open the read stream
-                StreamReader fileStreamReader = new StreamReader(this.OpenProductFileDialog.FileName);
-                
-                // while there is data in file to be read
-                while (fileStreamReader.Peek() != -1) 
+                // Declare the StreamReader Object
+                StreamReader fileStreamReader = null;
+
+                // if user has selected a file then try to open and read it
+                try
                 {
-                    // read each line and insert the data to the _ProductData collection
-                    this._ProductData.Add(fileStreamReader.ReadLine().Split(' ')[0], fileStreamReader.ReadLine().Split(' ')[1]);
-                }
+                    // Open the read stream
+                    fileStreamReader = new StreamReader(this.OpenProductFileDialog.FileName);
 
-                // fill the data on the ProductInfoForm
-                this._fillProductInfo();
-            }
-            catch (Exception ex)
-            {
-                // Give an appropriate error message
-                MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Debug.WriteLine(ex); // write the essential error information to the console
+                    // instantiate or clear the _ProductData before entering new data
+                    this._ProductData = new Dictionary<string, string>();
+
+                    // while there is data in file to be read
+                    while (fileStreamReader.Peek() != -1)
+                    {
+                        string[] dataRead = fileStreamReader.ReadLine().Split(':');
+                        // read each line and insert the data to the _ProductData collection
+                        this._ProductData.Add(dataRead[0], dataRead[1]);
+                    }
+
+                    // fill the data on the ProductInfoForm
+                    this._fillProductInfo();
+                }
+                catch (Exception ex)
+                {
+                    // Give an appropriate error message
+                    MessageBox.Show("Error reading the file. Please try again!", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Debug.WriteLine(ex); // write the essential error information to the console
+                }
+                finally
+                {
+                    if (fileStreamReader != null)
+                    {
+                        // Close the stream and release the resources
+                        fileStreamReader.Close();
+                    }
+                }
             }
         }
 
@@ -167,24 +186,34 @@ namespace DollarComputers
 
             if (result == DialogResult.OK)
             {
+                // Declare the StreamWriter Object
+                StreamWriter fileStreamWriter = null;
+
                 try
                 {
                     // Open the file stream for writing
-                    StreamWriter fileStreamWriter = new StreamWriter(this.SaveProductFileDialog.FileName);
+                    fileStreamWriter = new StreamWriter(this.SaveProductFileDialog.FileName);
 
                     // loop through each element inside the _ProductData collection to write it to the file
                     foreach (KeyValuePair<string, string> productDetail in this._ProductData)
                     {
                         // write the product detail into file. Example: "productID 7"
-                        fileStreamWriter.WriteLine(productDetail.Key + " " + productDetail.Value);
+                        fileStreamWriter.WriteLine(productDetail.Key + ":" + productDetail.Value);
                     }
-
                 }
                 catch (Exception ex)
                 {
                     // Give an error message
                     MessageBox.Show("Error saving the file. Please try again!", "Error Saving File", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Debug.WriteLine(ex); // print required error information to the console
+                }
+                finally
+                {
+                    if (fileStreamWriter != null)
+                    {
+                        // Close the stream and release the resources
+                        fileStreamWriter.Close();
+                    }
                 }
             }
         }
