@@ -21,6 +21,12 @@ namespace DollarComputers
         {
             InitializeComponent();
             
+        }
+
+        // Method to fill the values in the form
+        private void _fillForm(Dictionary<string, string> productDetails)
+        {
+
             // fill the SystemComponentsGroupBox
             foreach (TextBox textBox in this.SystemComponentsGroupBox.Controls.OfType<TextBox>())
             {
@@ -39,6 +45,26 @@ namespace DollarComputers
             this.PriceTextBox.Text = "$" + productDetails["cost"];
             this.SalesTaxTextBox.Text = "$" + (Double.Parse(productDetails["cost"]) * 0.13).ToString();
             this.TotalPriceTextBox.Text = "$" + (Double.Parse(productDetails["cost"]) * 1.13).ToString();
+
+            // Set the image depending on the product manufacturer
+            switch (productDetails["manufacturer"])
+            {
+                case "lenovo":
+                    LaptopPictureBox.BackgroundImage = DollarComputers.Properties.Resources.lenovo;
+                    break;
+                case "hp":
+                    LaptopPictureBox.BackgroundImage = DollarComputers.Properties.Resources.hp;
+                    break;
+                case "acer":
+                    LaptopPictureBox.BackgroundImage = DollarComputers.Properties.Resources.acer;
+                    break;
+                case "asus":
+                    LaptopPictureBox.BackgroundImage = DollarComputers.Properties.Resources.asus;
+                    break;
+                default:
+                    LaptopPictureBox.BackgroundImage = DollarComputers.Properties.Resources.demo_thinkpad;
+                    break;
+            }
         }
         
 

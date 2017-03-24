@@ -63,6 +63,26 @@ namespace DollarComputers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acer {
+            get {
+                object obj = ResourceManager.GetObject("acer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asus {
+            get {
+                object obj = ResourceManager.GetObject("asus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coin_image {
             get {
                 object obj = ResourceManager.GetObject("coin_image", resourceCulture);
@@ -83,9 +103,29 @@ namespace DollarComputers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hp {
+            get {
+                object obj = ResourceManager.GetObject("hp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap intro_hero {
             get {
                 object obj = ResourceManager.GetObject("intro-hero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lenovo {
+            get {
+                object obj = ResourceManager.GetObject("lenovo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

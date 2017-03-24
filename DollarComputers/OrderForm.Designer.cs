@@ -69,13 +69,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.ProductsDetailsListBox = new System.Windows.Forms.ListBox();
             this.BackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LaptopPictureBox = new System.Windows.Forms.PictureBox();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SystemComponentsGroupBox.SuspendLayout();
             this.ProductsDetailsGroupBox.SuspendLayout();
             this.OrderFormMenuStrip.SuspendLayout();
             this.PriceInfoGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LaptopPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // SystemComponentsGroupBox
@@ -332,12 +332,12 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Tag = "exit";
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this._OrderFormButtonClickEventHandler);
@@ -361,7 +361,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Tag = "about";
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this._OrderFormButtonClickEventHandler);
@@ -498,20 +498,20 @@
             // BackToolStripMenuItem
             // 
             this.BackToolStripMenuItem.Name = "BackToolStripMenuItem";
-            this.BackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.BackToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.BackToolStripMenuItem.Tag = "back";
             this.BackToolStripMenuItem.Text = "&Back";
             this.BackToolStripMenuItem.Click += new System.EventHandler(this._OrderFormButtonClickEventHandler);
             // 
-            // pictureBox1
+            // LaptopPictureBox
             // 
-            this.pictureBox1.BackgroundImage = global::DollarComputers.Properties.Resources.demo_thinkpad;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(484, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 186);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.LaptopPictureBox.BackgroundImage = global::DollarComputers.Properties.Resources.demo_thinkpad;
+            this.LaptopPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LaptopPictureBox.Location = new System.Drawing.Point(484, 49);
+            this.LaptopPictureBox.Name = "LaptopPictureBox";
+            this.LaptopPictureBox.Size = new System.Drawing.Size(239, 186);
+            this.LaptopPictureBox.TabIndex = 17;
+            this.LaptopPictureBox.TabStop = false;
             // 
             // printToolStripMenuItem
             // 
@@ -519,7 +519,7 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.printToolStripMenuItem.Tag = "print";
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this._OrderFormButtonClickEventHandler);
@@ -534,7 +534,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PriceInfoGroupBox);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.LaptopPictureBox);
             this.Controls.Add(this.ProductsDetailsGroupBox);
             this.Controls.Add(this.SystemComponentsGroupBox);
             this.Controls.Add(this.OrderFormMenuStrip);
@@ -553,7 +553,7 @@
             this.OrderFormMenuStrip.PerformLayout();
             this.PriceInfoGroupBox.ResumeLayout(false);
             this.PriceInfoGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LaptopPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,7 +589,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox LaptopPictureBox;
         private System.Windows.Forms.GroupBox PriceInfoGroupBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox TotalPriceTextBox;

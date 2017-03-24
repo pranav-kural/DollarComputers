@@ -121,13 +121,25 @@
   <data name="intro-hero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\intro-hero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coin_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coin_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coin_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coin_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="demo_thinkpad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\demo_thinkpad.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="asus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\asus.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lenovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lenovo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
