@@ -80,7 +80,7 @@ namespace DollarComputers
         {
             try
             {
-                // 
+                // Display loading form
 
                 // select all the products in the Products table of the DollarComputers DB
                 var ProductList = (from product in _DollarComputersDB.products
@@ -98,9 +98,6 @@ namespace DollarComputers
                 // Exit the application
                 //Application.Exit();
             }
-            
-
-            
             
         }
 
