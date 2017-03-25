@@ -79,7 +79,7 @@
             this.NextButton.Tag = "next";
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.SelectFormButtonClickEventHandler);
+            this.NextButton.Click += new System.EventHandler(this._SelectFormButtonClickEventHandler);
             // 
             // CancelButton
             // 
@@ -91,7 +91,7 @@
             this.CancelButton.Tag = "cancel";
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.SelectFormButtonClickEventHandler);
+            this.CancelButton.Click += new System.EventHandler(this._SelectFormButtonClickEventHandler);
             // 
             // ProductsDataGridView
             // 
@@ -103,7 +103,7 @@
             this.ProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductsDataGridView.Size = new System.Drawing.Size(661, 300);
             this.ProductsDataGridView.TabIndex = 14;
-            this.ProductsDataGridView.SelectionChanged += new System.EventHandler(this.ProductsDataGridView_SelectionChanged);
+            this.ProductsDataGridView.SelectionChanged += new System.EventHandler(this._ProductsDataGridView_SelectionChanged);
             // 
             // SelectForm
             // 
@@ -124,7 +124,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Your Computer";
-            this.Load += new System.EventHandler(this.SelectForm_Load);
+            this.Load += new System.EventHandler(this._SelectForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -151,6 +151,18 @@
   <ItemGroup>
     <None Include="Resources\demo_thinkpad.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asus.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lenovo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,12 +12,14 @@ namespace DollarComputers
 {
     public partial class SplashForm : Form
     {
+
+        // SplashForm constructor
         public SplashForm()
         {
             InitializeComponent();
         }
 
-        private void SplashFormTimer_Tick(object sender, EventArgs e)
+        private void _SplashFormTimer_Tick(object sender, EventArgs e)
         {
             // create a new instance of StartForm
             StartForm startForm = new StartForm();

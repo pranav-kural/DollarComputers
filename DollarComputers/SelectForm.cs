@@ -14,8 +14,8 @@ namespace DollarComputers
 {
     public partial class SelectForm : Form
     {
-        // connecting to the Products Models
-        ProductsModel DollarComputersDB = new ProductsModel();
+        // connecting to the Products Models (Dollar Computers database)
+        private ProductsModel _DollarComputersDB = new ProductsModel();
 
         // SelectForm constructor
         public SelectForm()
@@ -24,7 +24,7 @@ namespace DollarComputers
         }
 
         // Click Event handler for buttons
-        private void SelectFormButtonClickEventHandler(Object sender, EventArgs e)
+        private void _SelectFormButtonClickEventHandler(Object sender, EventArgs e)
         {
             // casting the sender object into Button
             Button buttonClicked = sender as Button;
@@ -40,8 +40,8 @@ namespace DollarComputers
                     {
                         Application.Exit();
                     }
-
                     break;
+
                 case "next":
                     // Collection to store the selected product's properties
                     // stored with property name and value both. Example: 'productId' => '7'
@@ -53,12 +53,6 @@ namespace DollarComputers
                     for (int i = 0; i <= selectedRow.Count - 1; i++)
                     {
                         selectedProduct.Add(ProductsDataGridView.Columns[i].HeaderText, selectedRow[i].Value.ToString());
-                    }
-                    
-                    //-- for debugging
-                    foreach (KeyValuePair<string, string> kvp in selectedProduct)
-                    {
-                        Debug.WriteLine(kvp.Key + " => " + kvp.Value);
                     }
 
                     // create an instance of the ProductInfoForm
@@ -72,7 +66,6 @@ namespace DollarComputers
 
                     // show the ProductInfoForm
                     productInfoForm.Show();
-
                     break;
             }
         }
@@ -83,22 +76,39 @@ namespace DollarComputers
         /// </summary>
         /// <param name="sender">Event object received</param>
         /// <param name="e">Event arguments</param>
-        private void SelectForm_Load(object sender, EventArgs e)
+        private void _SelectForm_Load(object sender, EventArgs e)
         {
-            // select all the products in the Products table of the DollarComputers DB
-            var ProductList = (from product in DollarComputersDB.products
-                               select product).ToList();
+            try
+            {
+                // 
 
-            // bind the ProductList to the ProductsDataGridView
-            ProductsDataGridView.DataSource = ProductList;
+                // select all the products in the Products table of the DollarComputers DB
+                var ProductList = (from product in _DollarComputersDB.products
+                                   select product).ToList();
+
+                // bind the ProductList to the ProductsDataGridView
+                ProductsDataGridView.DataSource = ProductList;
+            }
+            catch (Exception ex)
+            {
+                // Display an error message
+                MessageBox.Show("Unable to connect to the Database. Please try again later.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // print the error information to console
+                Debug.WriteLine(ex);
+                // Exit the application
+                //Application.Exit();
+            }
+            
+
+            
             
         }
 
         // DataGridView SelectionChanged event handler to update selection info
-        private void ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void _ProductsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            try
-            {
+            
+            try {
                 // display selected product details in the Your Selection Text Box
                 // SelectedCells index represents: 1 => Cost, 2 => MFG, 3=> Model
                 SelectionTextBox.Text = ProductsDataGridView.SelectedCells[2].Value.ToString() + " " + ProductsDataGridView.SelectedCells[3].Value.ToString() + " Priced at: $" + ProductsDataGridView.SelectedCells[1].Value.ToString();
@@ -107,10 +117,9 @@ namespace DollarComputers
             }
             catch (Exception ex)
             {
-                // empty catch block to catch the NullPointerException thrown when the form is
-                // first loaded without any prior selection
+                // For any errors thrown while the DataGridView is being populated
+                Debug.WriteLine(ex.Message);
             }
-           
         }
     }
 }

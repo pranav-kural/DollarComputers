@@ -15,7 +15,7 @@ namespace DollarComputers
     public partial class ProductInfoForm : Form
     {
 
-        // stores the product data
+        // stores the selected product data
         private Dictionary<string, string> _ProductData;
 
         // SelectForm reference
@@ -62,8 +62,8 @@ namespace DollarComputers
                     {
                         Application.Exit();
                     }
-
                     break;
+
                 case "next":
                     // create an instance of the OrderForm
                     OrderForm orderForm = new OrderForm(this._ProductData);
@@ -76,7 +76,6 @@ namespace DollarComputers
 
                     // show the OrderForm
                     orderForm.Show();
-
                     break;
             }
         }
@@ -222,7 +221,7 @@ namespace DollarComputers
         }
 
         // Exit menu option click event handler
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // uses the same logic as cancel button to exit the application
             this.CancelButton.PerformClick();

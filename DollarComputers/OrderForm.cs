@@ -11,16 +11,22 @@ using System.Windows.Forms;
 
 namespace DollarComputers
 {
+    // Order form class
     public partial class OrderForm : Form
     {
 
         // refernce to the previous ProductInfoForm
         public ProductInfoForm productInfoForm;
 
+        /// <summary>
+        /// Order Form Constructor
+        /// </summary>
+        /// <param name="productDetails">Collection of details about the product for which the order is to be placed</param>
         public OrderForm(Dictionary<string, string> productDetails)
         {
             InitializeComponent();
-            
+            // fill the form with data received
+            this._fillForm(productDetails);
         }
 
         // Method to fill the values in the form
@@ -93,8 +99,7 @@ namespace DollarComputers
                 menuItemClicked = sender as ToolStripMenuItem;
             }
 
-            
-
+            // perform action based on tag identification
             switch ((buttonClicked != null) ? buttonClicked.Tag.ToString() : menuItemClicked.Tag.ToString())
             {
                 case "cancel":
