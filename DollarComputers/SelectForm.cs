@@ -81,13 +81,21 @@ namespace DollarComputers
             try
             {
                 // Display loading form
+                LoadingForm loadingForm = new LoadingForm();
+                loadingForm.Show(); // display loading form modelessly
+                System.Windows.Forms.Application.DoEvents();
 
                 // select all the products in the Products table of the DollarComputers DB
                 var ProductList = (from product in _DollarComputersDB.products
                                    select product).ToList();
 
+                // hide the loading form
+                loadingForm.Hide();
+
                 // bind the ProductList to the ProductsDataGridView
                 ProductsDataGridView.DataSource = ProductList;
+
+                
             }
             catch (Exception ex)
             {

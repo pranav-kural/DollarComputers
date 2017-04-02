@@ -17,13 +17,13 @@ using System.Windows.Forms;
 /// with the order he will be shown the information of the order with price information,
 /// and the order will be finalised on user pressing the Finish button.
 /// 
-/// BONUS: Used the Entity Framework.
+/// BONUS: Used the Entity Framework and Added a loading form where the application takes times
 /// 
 /// Author Name: Pranav Kural
 /// Student Number: 200333253
 /// 
 /// App Creation: March 13 2017
-/// Last Updated: March 25 2017
+/// Last Updated: April 2 2017
 /// 
 /// Brief revision history:
 /// Initial commit to add default .gitIgnore and .gitAttribute files.
@@ -31,6 +31,7 @@ using System.Windows.Forms;
 /// Added the AboutBox information
 /// Picture Box functionality for the Order Form
 /// Added Documentaion and commenting to the code
+/// Added the loading form
 /// </summary>
 
 namespace DollarComputers
